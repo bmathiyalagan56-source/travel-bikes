@@ -1,0 +1,645 @@
+
+/* Common styles */
+
+@font-face {
+    font-family: "Bike Georgia";
+    src: url("fonts/georgia.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Bike Georgia";
+    src: url("fonts/georgiab.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #edf3f6;
+    color: #24333b;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Main container */
+
+.site-container {
+    width: 960px;
+    max-width: calc(100% - 32px);
+    margin: 24px auto;
+    background: white;
+    border: 1px solid #c9d8de;
+    box-shadow: 0 5px 22px rgba(25, 55, 70, 0.12);
+}
+
+/* Header */
+
+.site-header {
+    min-height: 190px;
+    display: flex;
+    align-items: center;
+    padding: 28px 38px;
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 39, 58, .88),
+            rgba(8, 39, 58, .25)
+        ),
+        url("../images/banner.svg") center / cover no-repeat;
+}
+
+.header-content h1 {
+    font-family: "Bike Georgia", Georgia, serif;
+    font-size: 42px;
+    line-height: 1.15;
+}
+
+.eyebrow {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.tagline {
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+/* Navigation */
+
+.main-nav {
+    display: flex;
+    background: #153f5b;
+    border-top: 4px solid #87bdcb;
+}
+
+.main-nav a {
+    flex: 1;
+    padding: 12px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-right: 1px solid white;
+    transition: 0.3s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    background: #d9edf1;
+    color: #153f5b;
+}
+
+/* Two column layout */
+
+.page-layout {
+    display: grid;
+    grid-template-columns: 2.1fr 0.9fr;
+    gap: 28px;
+    padding: 28px;
+}
+
+.home-layout,
+.left-sidebar-layout {
+    grid-template-columns: 0.9fr 2.1fr;
+}
+
+.home-layout > .sidebar,
+.left-sidebar-layout > .sidebar {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.home-layout > .main-content,
+.left-sidebar-layout > .main-content {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.main-content {
+    min-width: 0;
+}
+
+/* Headings */
+
+h2 {
+    margin-bottom: 14px;
+    color: #1d5e75;
+    font-family: "Bike Georgia", Georgia, serif;
+    font-size: 27px;
+}
+
+h3 {
+    margin: 22px 0 8px;
+    color: #2b697c;
+    font-family: "Bike Georgia", Georgia, serif;
+    font-size: 20px;
+}
+
+h4 {
+    color: #285a69;
+    font-family: "Bike Georgia", Georgia, serif;
+}
+
+p {
+    margin-bottom: 13px;
+}
+
+.lead {
+    color: #52656e;
+    font-size: 17px;
+}
+
+/* Home page image */
+
+.hero-figure {
+    margin: 18px 0;
+}
+
+.hero-figure img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+figcaption {
+    padding-top: 6px;
+    color: #687981;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* Floating image */
+
+.float-image {
+    float: left;
+    width: 135px;
+    margin: 5px 15px 10px 0;
+    border-radius: 5px;
+}
+
+.float-paragraph::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* Lists */
+
+.feature-list {
+    padding-left: 23px;
+}
+
+.feature-list li {
+    margin-bottom: 7px;
+}
+
+/* Experiences */
+
+.experience-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.experience-list article {
+    padding: 13px;
+    background: #eff6f7;
+    border: 1px solid #d5e3e7;
+    border-radius: 5px;
+}
+
+.experience-list p {
+    font-size: 14px;
+}
+
+/* Sidebar */
+
+.sidebar {
+    padding: 18px;
+    background: #f0f6f7;
+    border: 1px solid #d5e3e7;
+    border-radius: 5px;
+    align-self: start;
+    text-align: left;
+}
+
+.sidebar h2 {
+    font-size: 21px;
+}
+
+.sidebar h3 {
+    font-size: 17px;
+}
+
+.sidebar ul,
+.sidebar ol {
+    padding-left: 20px;
+    margin: 6px 0 15px;
+}
+
+.sidebar li {
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.sidebar-links {
+    list-style: none;
+    padding-left: 0 !important;
+    text-align: left;
+}
+
+.sidebar-links a {
+    color: #17647f;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.sidebar-links a:hover {
+    text-decoration: underline;
+    color: #14485c;
+}
+
+.sidebar h5 {
+    margin: 16px 0 6px;
+    color: #2b697c;
+    font-size: 14px;
+}
+
+.sidebar-image {
+    width: 100%;
+    margin-top: 16px;
+    border-radius: 4px;
+}
+
+/* Reminder box */
+
+.reminder-box {
+    margin-top: 18px;
+    padding: 13px;
+    background: #e1f0f2;
+    border-left: 4px solid #348191;
+}
+
+.reminder-box h3 {
+    margin-top: 0;
+}
+
+.reminder-box p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Bike cards */
+
+.bike-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.bike-card {
+    overflow: hidden;
+    border: 1px solid #d4e2e7;
+    border-radius: 6px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(31, 67, 70, .07);
+}
+
+.bike-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 14px;
+}
+
+.card-body h3 {
+    margin: 0 0 7px;
+    font-size: 19px;
+}
+
+.card-body p {
+    font-size: 14px;
+}
+
+/* Riding tips */
+
+.tip-section {
+    padding-bottom: 13px;
+    margin-bottom: 13px;
+    border-bottom: 1px solid #dce8eb;
+}
+
+.tip-section h3 {
+    margin-top: 17px;
+}
+
+.tip-section ul {
+    padding-left: 22px;
+}
+
+.tip-section li {
+    margin-bottom: 5px;
+}
+
+.check-list {
+    list-style: square;
+}
+
+/* Important note */
+
+.important-note {
+    padding: 14px;
+    margin-top: 18px;
+    background: #eaf4f5;
+    border: 1px solid #c9e0e5;
+    border-left: 4px solid #348191;
+}
+
+/* =================================
+   RIDING TIPS IMAGE CAROUSEL
+================================= */
+
+.carousel {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    margin: 20px 0;
+    border: 3px solid #d5e3e7;
+    border-radius: 5px;
+    background: #eee;
+}
+
+.carousel input {
+    display: none;
+}
+
+.images {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.images img {
+    width: 33.3333%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Slide movement */
+
+#slide1:checked ~ .images {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .images {
+    transform: translateX(-33.3333%);
+}
+
+#slide3:checked ~ .images {
+    transform: translateX(-66.6666%);
+}
+
+/* Carousel dots */
+
+.dots {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.dots label {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border: 1px solid #153f5b;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#slide1:checked ~ .dots label:nth-child(1),
+#slide2:checked ~ .dots label:nth-child(2),
+#slide3:checked ~ .dots label:nth-child(3) {
+    background: #153f5b;
+}
+
+/* Audio and PDF links */
+
+.sidebar-links a {
+    color: #17647f;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.sidebar-links a:hover {
+    text-decoration: underline;
+    color: #14485c;
+}
+
+/* Footer */
+
+.site-footer {
+    padding: 14px 24px;
+    color: #eaf3f5;
+    background: linear-gradient(135deg, #153f5b, #2c7887);
+    text-align: center;
+    font-size: 13px;
+}
+
+.site-footer p {
+    margin: 2px 0;
+}
+
+/* Tablet responsive design */
+
+@media (max-width: 800px) {
+
+    .site-container {
+        width: 94%;
+    }
+
+    .page-layout {
+        grid-template-columns: 1.8fr 0.8fr;
+        gap: 18px;
+        padding: 22px;
+    }
+
+    .home-layout,
+    .left-sidebar-layout {
+        grid-template-columns: 0.8fr 1.8fr;
+    }
+
+    .header-content h1 {
+        font-size: 36px;
+    }
+
+    .experience-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* Mobile responsive design */
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    .site-container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+
+    .site-header {
+        min-height: 165px;
+        padding: 24px 20px;
+    }
+
+    .header-content h1 {
+        font-size: 32px;
+    }
+
+    .tagline {
+        font-size: 14px;
+    }
+
+    .main-nav {
+        flex-wrap: wrap;
+    }
+
+    .main-nav a {
+        flex: 1 1 33.33%;
+        padding: 11px 5px;
+    }
+
+    .page-layout {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 22px;
+    }
+
+    .home-layout > .sidebar,
+    .left-sidebar-layout > .sidebar {
+        order: -1;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .hero-figure img {
+        height: 210px;
+    }
+
+    .bike-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bike-card img {
+        height: 190px;
+    }
+
+    .carousel {
+        height: 180px;
+    }
+
+    .site-footer {
+        padding: 14px 10px;
+    }
+
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+    .bike-types-page .page-layout {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bike-types-page .left-sidebar-layout > .sidebar {
+        order: -1;
+    }
+
+    .bike-types-page .bike-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 950px) and (orientation: landscape) {
+    .bike-types-page .site-container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+
+    .bike-types-page .site-header {
+        min-height: 125px;
+        padding: 16px 24px;
+    }
+
+    .bike-types-page .header-content h1 {
+        font-size: 32px;
+    }
+
+    .bike-types-page .main-nav {
+        flex-wrap: nowrap;
+    }
+
+    .bike-types-page .main-nav a {
+        padding: 9px 5px;
+        font-size: 14px;
+    }
+
+    .bike-types-page .page-layout.left-sidebar-layout {
+        grid-template-columns: minmax(150px, 0.8fr) minmax(0, 2.2fr);
+        gap: 14px;
+        padding: 16px;
+    }
+
+    .bike-types-page .bike-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .bike-types-page .bike-card img {
+        height: 115px;
+    }
+
+    .bike-types-page .card-body {
+        padding: 10px;
+    }
+
+    .bike-types-page .card-body h3 {
+        font-size: 17px;
+    }
+}
